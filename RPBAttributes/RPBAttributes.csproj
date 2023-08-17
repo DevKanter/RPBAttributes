@@ -1,14 +1,17 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <BaseOutputPath>C:\Users\Alex\Desktop\RolePlayBasics\Builds\RPBAttributes</BaseOutputPath>
+    <BaseOutputPath></BaseOutputPath>
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="RPBUtilities">
-      <HintPath>..\..\DevKanter\RPBUtilities\RPBUtilities\bin\Release\netstandard2.0\RPBUtilities.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\..\RPBCommon\RPBCommon\RPBCommon.csproj" />
+    <ProjectReference Include="..\..\RPBUtilities\RPBUtilities\RPBUtilities.csproj" />
   </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy /Y &quot;$(TargetDir)$(ProjectName).dll&quot; &quot;$(SolutionDir)output\$(ProjectName).dll&quot;" />
+  </Target>
 
 </Project>

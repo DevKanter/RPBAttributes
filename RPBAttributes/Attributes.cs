@@ -39,7 +39,7 @@ namespace RPBAttributes
     {
         public readonly TEnum Attribute;
         public readonly ValueType ValueType;
-        public readonly 
+
     }
 }
 
