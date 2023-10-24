@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\RPBCommon\RPBCommon\SMG1Common.csproj" />
     <ProjectReference Include="..\..\RPBUtilities\RPBUtilities\RPBUtilities.csproj" />
   </ItemGroup>
 

@@ -11,10 +11,7 @@ namespace RPBAttributes
         {
             _attributes = new AttributeValue[Enum.GetNames(typeof(TEnum)).Length];
 
-            foreach (var attribute in profile.Attributes)
-            {
-                _attributes[ToInt(attribute)] = new AttributeValue();
-            }
+            foreach (var attribute in profile.Attributes) _attributes[ToInt(attribute)] = new AttributeValue();
         }
 
         public AttributeValue this[TEnum attr] => _attributes[ToInt(attr)];
@@ -24,22 +21,16 @@ namespace RPBAttributes
             get => _attributes[ToInt(attr)][type];
             set => _attributes[ToInt(attr)][type] = value;
         }
-
-
     }
 
     public class AttributeStats<TEnum> where TEnum : unmanaged, Enum
     {
         private readonly AttributeValue[] _attributes;
-
-
     }
 
-    public struct AttributeData<TEnum> where TEnum :unmanaged,Enum
+    public struct AttributeData<TEnum> where TEnum : unmanaged, Enum
     {
         public readonly TEnum Attribute;
         public readonly ValueType ValueType;
-
     }
 }
-

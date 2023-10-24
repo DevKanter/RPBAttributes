@@ -14,4 +14,3 @@
         ATTRIBUTE_TYPE_MAX
     }
 }
-

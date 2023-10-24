@@ -8,5 +8,3 @@ namespace RPBAttributes
         public TEnum[] Attributes { get; protected set; } = Array.Empty<TEnum>();
     }
 }
-
-
