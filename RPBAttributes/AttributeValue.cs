@@ -14,13 +14,13 @@ namespace RPBAttributes
 
         public void Update()
         {
-            UpdateAbsolute();
-            UpdateRatio();
+            _updateAbsolute();
+            _updateRatio();
 
-            UpdateTotal();
+            _updateTotal();
         }
 
-        private void UpdateTotal()
+        private void _updateTotal()
         {
             _values[ToInt(AttributeType.CALC_TOTAL)] = _values[ToInt(AttributeType.CALC_ABS)] *
                                                        ((AttributeConst.ATTR_CALC_RATIO_PER_PERCENT +
@@ -28,14 +28,14 @@ namespace RPBAttributes
                                                         AttributeConst.ATTR_CALC_RATIO_PER_PERCENT);
         }
 
-        private void UpdateAbsolute()
+        private void _updateAbsolute()
         {
             _values[ToInt(AttributeType.CALC_ABS)] = _values[ToInt(AttributeType.BASE)] +
                                                      _values[ToInt(AttributeType.ITEM)] +
                                                      _values[ToInt(AttributeType.SKILL)];
         }
 
-        private void UpdateRatio()
+        private void _updateRatio()
         {
             _values[ToInt(AttributeType.CALC_RATIO)] =
                 _values[ToInt(AttributeType.ITEM_RATIO)] + _values[ToInt(AttributeType.SKILL_RATIO)];
