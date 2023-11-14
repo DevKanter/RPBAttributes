@@ -23,14 +23,4 @@ namespace RPBAttributes
         }
     }
 
-    public class AttributeStats<TEnum> where TEnum : unmanaged, Enum
-    {
-        private readonly AttributeValue[] _attributes;
-    }
-
-    public struct AttributeData<TEnum> where TEnum : unmanaged, Enum
-    {
-        public readonly TEnum Attribute;
-        public readonly ValueType ValueType;
-    }
 }
